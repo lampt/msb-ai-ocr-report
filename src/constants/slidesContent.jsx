@@ -8,13 +8,13 @@ const MATURITY_LEVELS = [
     "technology": "Basic OCR",
     "metrics": [
       {
-        "metric": "Character Accuracy Rate (CAR)",
-        "benchmark": "85-90% (text rõ ràng)",
+        "metric": "Accuracy (CAR) & Error (CER)",
+        "benchmark": "CAR > 90% (CER < 10%)",
         "meaning": "Scan lưu trữ, tra cứu cơ bản."
       },
       {
-        "metric": "Word Accuracy Rate (WAR)",
-        "benchmark": "80-85%",
+        "metric": "Word Accuracy (WAR) & Error (WER)",
+        "benchmark": "WAR > 85% (WER < 15%)",
         "meaning": "Giảm nhập liệu tay với văn bản."
       },
       {
@@ -459,60 +459,60 @@ const OCRConceptVisual = () => (
     {/* Process Flow Grid */}
     <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px', flex: 1, minHeight: 0}}>
       {/* Input Layer */}
-      <div className="card" style={{padding: '0', display: 'flex', flexDirection: 'column', overflow: 'hidden', border: '1px solid #e5e7eb'}}>
+      <div className="card" style={{padding: '0', display: 'flex', flexDirection: 'column', overflow: 'hidden', border: '1px solid #e5e7eb', height: '100%'}}>
         <div style={{padding: '20px', background: '#f8fafc', borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center', gap: '15px'}}>
-           <div style={{background: '#64748b', color: 'white', fontWeight: 'bold', padding: '4px 12px', borderRadius: '8px', fontSize: '14px'}}>STEP 01</div>
-           <div style={{fontWeight: '700', color: '#475569', fontSize: '16px', textTransform: 'uppercase', letterSpacing: '0.5px'}}>Input Layer</div>
+           <div style={{background: '#64748b', color: 'white', fontWeight: 'bold', padding: '6px 14px', borderRadius: '8px', fontSize: '15px'}}>STEP 01</div>
+           <div style={{fontWeight: '700', color: '#475569', fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '0.5px'}}>Input Layer</div>
         </div>
-        <div style={{padding: '24px', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-           <div style={{width: '70px', height: '70px', background: '#f1f5f9', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px'}}>
-            <i className="fas fa-file-import" style={{fontSize: '32px', color: '#64748b'}}></i>
+        <div style={{padding: '28px', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+           <div style={{width: '80px', height: '80px', background: '#f1f5f9', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+            <i className="fas fa-file-import" style={{fontSize: '36px', color: '#64748b'}}></i>
           </div>
-          <h4 style={{margin: '0 0 16px 0', textAlign: 'center', color: '#1e293b', fontSize: '1.4rem', fontWeight: '700'}}>Dữ liệu đầu vào</h4>
-          <ul style={{margin: 0, paddingLeft: '20px', fontSize: '17px', color: '#4b5563', lineHeight: '1.8', width: '100%'}}>
-            <li style={{marginBottom: '8px'}}>Scan / Photocopy</li>
-            <li style={{marginBottom: '8px'}}>Ảnh chụp (Mobile App)</li>
-            <li style={{marginBottom: '8px'}}>File PDF/Image upload</li>
+          <h4 style={{margin: '0 0 20px 0', textAlign: 'center', color: '#1e293b', fontSize: '1.5rem', fontWeight: '700'}}>Dữ liệu đầu vào</h4>
+          <ul style={{margin: 0, paddingLeft: '20px', fontSize: '17px', color: '#4b5563', lineHeight: '1.6', width: '100%'}}>
+            <li style={{marginBottom: '10px'}}>Scan / Photocopy</li>
+            <li style={{marginBottom: '10px'}}>Ảnh chụp (Mobile App)</li>
+            <li style={{marginBottom: '10px'}}>File PDF/Image upload</li>
             <li>Chứng từ giấy đa dạng</li>
           </ul>
         </div>
       </div>
 
       {/* Core Engine */}
-      <div className="card" style={{padding: '0', display: 'flex', flexDirection: 'column', overflow: 'hidden', border: '1px solid #fed7aa', boxShadow: '0 10px 25px -5px rgba(240, 110, 29, 0.15)', transform: 'scale(1.03)', zIndex: 10}}>
+      <div className="card" style={{padding: '0', display: 'flex', flexDirection: 'column', overflow: 'hidden', border: '1px solid #fed7aa', boxShadow: '0 10px 25px -5px rgba(240, 110, 29, 0.15)', transform: 'scale(1.03)', zIndex: 10, height: '100%'}}>
         <div style={{padding: '20px', background: '#fff7ed', borderBottom: '1px solid #fed7aa', display: 'flex', alignItems: 'center', gap: '15px'}}>
-           <div style={{background: 'var(--msb-orange)', color: 'white', fontWeight: 'bold', padding: '4px 12px', borderRadius: '8px', fontSize: '14px'}}>STEP 02</div>
-           <div style={{fontWeight: '700', color: '#c2410c', fontSize: '16px', textTransform: 'uppercase', letterSpacing: '0.5px'}}>Core Engine</div>
+           <div style={{background: 'var(--msb-orange)', color: 'white', fontWeight: 'bold', padding: '6px 14px', borderRadius: '8px', fontSize: '15px'}}>STEP 02</div>
+           <div style={{fontWeight: '700', color: '#c2410c', fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '0.5px'}}>Core Engine</div>
         </div>
-        <div style={{padding: '24px', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-           <div style={{width: '70px', height: '70px', background: 'rgba(240, 110, 29, 0.1)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px'}}>
-            <i className="fas fa-microchip" style={{fontSize: '32px', color: 'var(--msb-orange)'}}></i>
+        <div style={{padding: '28px', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+           <div style={{width: '80px', height: '80px', background: 'rgba(240, 110, 29, 0.1)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+            <i className="fas fa-microchip" style={{fontSize: '36px', color: 'var(--msb-orange)'}}></i>
           </div>
-          <h4 style={{margin: '0 0 16px 0', textAlign: 'center', color: '#1e293b', fontSize: '1.4rem', fontWeight: '700'}}>Xử lý thông minh</h4>
-          <ul style={{margin: 0, paddingLeft: '20px', fontSize: '17px', color: '#4b5563', lineHeight: '1.8', width: '100%'}}>
-            <li style={{marginBottom: '8px'}}><strong>Pre-processing:</strong> Khử nhiễu</li>
-            <li style={{marginBottom: '8px'}}><strong>OCR:</strong> Nhận diện ký tự</li>
-            <li style={{marginBottom: '8px'}}><strong>Extraction:</strong> Trích xuất</li>
+          <h4 style={{margin: '0 0 20px 0', textAlign: 'center', color: '#1e293b', fontSize: '1.5rem', fontWeight: '700'}}>Xử lý thông minh</h4>
+          <ul style={{margin: 0, paddingLeft: '20px', fontSize: '17px', color: '#4b5563', lineHeight: '1.6', width: '100%'}}>
+            <li style={{marginBottom: '10px'}}><strong>Pre-processing:</strong> Khử nhiễu</li>
+            <li style={{marginBottom: '10px'}}><strong>OCR:</strong> Nhận diện ký tự</li>
+            <li style={{marginBottom: '10px'}}><strong>Extraction:</strong> Trích xuất</li>
             <li><strong>Classification:</strong> Phân loại</li>
           </ul>
         </div>
       </div>
 
       {/* Downstream */}
-      <div className="card" style={{padding: '0', display: 'flex', flexDirection: 'column', overflow: 'hidden', border: '1px solid #fecaca'}}>
+      <div className="card" style={{padding: '0', display: 'flex', flexDirection: 'column', overflow: 'hidden', border: '1px solid #fecaca', height: '100%'}}>
         <div style={{padding: '20px', background: '#fef2f2', borderBottom: '1px solid #fecaca', display: 'flex', alignItems: 'center', gap: '15px'}}>
-           <div style={{background: 'var(--msb-red)', color: 'white', fontWeight: 'bold', padding: '4px 12px', borderRadius: '8px', fontSize: '14px'}}>STEP 03</div>
-           <div style={{fontWeight: '700', color: '#b91c1c', fontSize: '16px', textTransform: 'uppercase', letterSpacing: '0.5px'}}>Downstream</div>
+           <div style={{background: 'var(--msb-red)', color: 'white', fontWeight: 'bold', padding: '6px 14px', borderRadius: '8px', fontSize: '15px'}}>STEP 03</div>
+           <div style={{fontWeight: '700', color: '#b91c1c', fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '0.5px'}}>Downstream</div>
         </div>
-        <div style={{padding: '24px', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-           <div style={{width: '70px', height: '70px', background: 'rgba(228, 30, 38, 0.1)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px'}}>
-            <i className="fas fa-network-wired" style={{fontSize: '32px', color: 'var(--msb-red)'}}></i>
+        <div style={{padding: '28px', flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+           <div style={{width: '80px', height: '80px', background: 'rgba(228, 30, 38, 0.1)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px'}}>
+            <i className="fas fa-network-wired" style={{fontSize: '36px', color: 'var(--msb-red)'}}></i>
           </div>
-          <h4 style={{margin: '0 0 16px 0', textAlign: 'center', color: '#1e293b', fontSize: '1.4rem', fontWeight: '700'}}>Giá trị nghiệp vụ</h4>
-          <ul style={{margin: 0, paddingLeft: '20px', fontSize: '17px', color: '#4b5563', lineHeight: '1.8', width: '100%'}}>
-            <li style={{marginBottom: '8px'}}>Tự động nhập liệu (eKYC)</li>
-            <li style={{marginBottom: '8px'}}>Giảm rủi ro sai sót</li>
-            <li style={{marginBottom: '8px'}}>Tăng tốc độ xử lý (SLA)</li>
+          <h4 style={{margin: '0 0 20px 0', textAlign: 'center', color: '#1e293b', fontSize: '1.5rem', fontWeight: '700'}}>Giá trị nghiệp vụ</h4>
+          <ul style={{margin: 0, paddingLeft: '20px', fontSize: '17px', color: '#4b5563', lineHeight: '1.6', width: '100%'}}>
+            <li style={{marginBottom: '10px'}}>Tự động nhập liệu (eKYC)</li>
+            <li style={{marginBottom: '10px'}}>Giảm rủi ro sai sót</li>
+            <li style={{marginBottom: '10px'}}>Tăng tốc độ xử lý (SLA)</li>
             <li>Truy vết & Kiểm soát</li>
           </ul>
         </div>
@@ -529,13 +529,13 @@ const MaturityTable = () => (
            <i className="fas fa-layer-group" style={{fontSize:20, color:'var(--msb-orange)'}}></i>
         </div>
         <div>
-            <div style={{fontWeight:700, fontSize: '1.1rem', color: '#111827'}}>Khung 5 cấp độ trưởng thành OCR</div>
-            <div style={{fontSize:13, color:'#6b7280', marginTop:2}}>Tiêu chuẩn đánh giá từ Basic OCR đến Agentic OCR</div>
+            <div style={{fontWeight:700, fontSize: '1.2rem', color: '#111827'}}>Khung 5 cấp độ trưởng thành OCR</div>
+            <div style={{fontSize:14, color:'#6b7280', marginTop:2}}>Tiêu chuẩn đánh giá từ Basic OCR đến Agentic OCR</div>
         </div>
       </div>
     </div>
     <div style={{flex:1, minHeight:0, overflow:'auto'}}>
-      <table className="clean-table" style={{fontSize:13.5, width: '100%', borderCollapse: 'collapse'}}>
+      <table className="clean-table" style={{fontSize:14, width: '100%', borderCollapse: 'collapse'}}>
         <thead>
           <tr style={{backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb'}}>
             <th style={{width:'8%', padding: '10px 12px', textAlign: 'center', borderRight: '1px solid #e5e7eb', color: '#374151'}}>Cấp độ</th>
@@ -575,9 +575,8 @@ const MaturityTable = () => (
 
 const EngineAllocTable = () => (
   <div className="card" style={{height:'100%', display:'flex', flexDirection:'column', minHeight:0}}>
-    <h3 style={{marginTop:0, color:'var(--msb-red)', fontSize: '1.5rem'}}><i className="fas fa-diagram-project" style={{marginRight:10}}></i>Phân bổ engine theo loại hồ sơ</h3>
-    <div style={{fontSize:18, color:'var(--text-secondary)'}}>Bảng khuyến nghị trong báo cáo (mục 6.1) — dùng làm rule routing ban đầu trên AIEP.</div>
-    <table className="clean-table" style={{marginTop:14, fontSize:16}}>
+    <h3 style={{marginTop:0, color:'var(--msb-red)', fontSize: '1.6rem'}}><i className="fas fa-diagram-project" style={{marginRight:10}}></i>Phân bổ engine theo loại hồ sơ</h3>
+    <table className="clean-table" style={{marginTop:14, fontSize:17}}>
       <thead><tr><th style={{width:'28%'}}>Giải pháp</th><th>Nhóm giấy tờ áp dụng</th></tr></thead>
       <tbody>
         {ENGINE_ALLOC.map((r, i) => (
@@ -654,13 +653,184 @@ const CurrentStateAnalysis = () => (
           <div style={{width: '48px', height: '48px', borderRadius: '12px', background: item.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', color: item.color, flexShrink: 0}}>
             <i className={`fas ${item.icon}`} style={{fontSize: '20px'}}></i>
           </div>
-          <h4 style={{margin: 0, fontSize: '1.25rem', color: '#1f2937', fontWeight: '700'}}>{item.title}</h4>
+          <h4 style={{margin: 0, fontSize: '1.4rem', color: '#1f2937', fontWeight: '700'}}>{item.title}</h4>
         </div>
-        <ul style={{margin: 0, paddingLeft: '20px', fontSize: '16px', color: '#4b5563', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '8px'}}>
+        <ul style={{margin: 0, paddingLeft: '20px', fontSize: '17px', color: '#4b5563', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '8px'}}>
           {item.items.map((line, idx) => (
             <li key={idx}>{line}</li>
           ))}
         </ul>
+      </div>
+    ))}
+  </div>
+);
+
+const DataQualityVisual = () => (
+  <div style={{height: '100%', display: 'flex', flexDirection: 'column', gap: '20px'}}>
+    <div style={{fontSize: '18px', color: '#4b5563', background: '#f3f4f6', padding: '16px 24px', borderRadius: '12px', borderLeft: '6px solid var(--msb-orange)'}}>
+      Hệ thống văn bản điện tử đã vận hành ổn định. Tuy nhiên, đầu vào cho OCR vẫn gặp rào cản tại các điểm chạm vật lý (chi nhánh, khách hàng upload):
+    </div>
+    <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: '24px', flex: 1}}>
+      {[
+        {
+          name: "Nguồn dữ liệu hỗn hợp",
+          slogan: "HYBRID INPUT",
+          features: ["Kết hợp giữa văn bản số hóa sẵn và bản scan/chụp", "Đến từ nhiều kênh: Mobile App, Quầy, Đối tác"],
+          color: "var(--msb-red)",
+          icon: "fas fa-share-nodes",
+          bg: "#fef2f2"
+        },
+        {
+          name: "Định dạng chưa chuẩn hóa",
+          slogan: "VARIOUS FORMATS",
+          features: ["Tồn tại song song PDF, Word và ảnh (JPG/PNG)", "Độ phân giải và chuẩn nén khác nhau giữa các nguồn"],
+          color: "var(--msb-orange)",
+          icon: "fas fa-file-lines",
+          bg: "#fff7ed"
+        },
+        {
+          name: "Thách thức từ ảnh chụp",
+          slogan: "IMAGE QUALITY",
+          features: ["Một số ảnh bị mờ, nghiêng, thiếu sáng (Mobile)", "Bản photocopy mờ hoặc scan độ phân giải thấp"],
+          color: "#0d6efd",
+          icon: "fas fa-camera-retro",
+          bg: "#eff6ff"
+        },
+        {
+          name: "Nhiễu & Đặc thù pháp lý",
+          slogan: "NOISE & STAMPS",
+          features: ["Dấu đỏ đóng chồng lên chữ (đặc thù ngân hàng)", "Nhiễu nền, vết mực, bóng tay trên giấy tờ cũ"],
+          color: "#198754",
+          icon: "fas fa-stamp",
+          bg: "#f0fdf4"
+        }
+      ].map((card, i) => (
+        <div key={i} className="card" style={{padding: '24px', display: 'flex', gap: '20px', alignItems: 'start', borderTop: `4px solid ${card.color}`, boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)'}}>
+           <div style={{width: '64px', height: '64px', borderRadius: '16px', background: card.bg, color: card.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>
+             <i className={card.icon} style={{fontSize: '28px'}}></i>
+           </div>
+           <div>
+             <div style={{fontSize: '14px', fontWeight: '700', color: card.color, letterSpacing: '1px', marginBottom: '4px'}}>{card.slogan}</div>
+             <h3 style={{margin: '0 0 12px 0', fontSize: '1.5rem', color: '#1f2937'}}>{card.name}</h3>
+             <ul style={{margin: 0, paddingLeft: '20px', fontSize: '17px', color: '#4b5563', lineHeight: '1.5'}}>
+               {card.features.map((f, j) => <li key={j} style={{marginBottom: '4px'}}>{f}</li>)}
+             </ul>
+           </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const ErrorAnalysisVisual = () => (
+  <div style={{height: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px'}}>
+    <div className="card" style={{padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column', borderTop: '6px solid var(--msb-red)'}}>
+      <div style={{padding: '24px', background: '#fef2f2', borderBottom: '1px solid #fee2e2', display: 'flex', alignItems: 'center', gap: '16px'}}>
+        <div style={{width: '56px', height: '56px', borderRadius: '12px', background: 'white', color: 'var(--msb-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.05)'}}>
+          <i className="fas fa-microchip" style={{fontSize: '28px'}}></i>
+        </div>
+        <div>
+          <h3 style={{margin: 0, fontSize: '1.6rem', color: '#991b1b'}}>In-House (AIEP)</h3>
+          <div style={{color: '#ef4444', fontSize: '16px', fontWeight: '600'}}>Các điểm yếu kỹ thuật chính</div>
+        </div>
+      </div>
+      <div style={{padding: '28px', flex: 1}}>
+        <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '20px'}}>
+          {[
+            { label: "Ngôn ngữ", text: "Hay mất/lẫn dấu tiếng Việt (â, ã, ơ, ô)." },
+            { label: "Thành phần", text: "Chưa nhận diện được chữ ký, con dấu." },
+            { label: "Cấu trúc", text: "Kém với bảng biểu phức tạp & chữ viết tay." },
+            { label: "Vận hành", text: "Hay gặp lỗi OOO/CUDA (hết tài nguyên)." },
+            { label: "Đầu ra", text: "Chỉ OCR ra text thuần, chưa có cấu trúc." }
+          ].map((item, i) => (
+            <li key={i} style={{display: 'flex', gap: '16px', alignItems: 'start'}}>
+              <i className="fas fa-circle-xmark" style={{color: '#ef4444', marginTop: '5px', fontSize: '18px'}}></i>
+              <div style={{fontSize: '17px', lineHeight: '1.5', color: '#374151'}}>
+                <strong style={{color: '#111827'}}>{item.label}:</strong> {item.text}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div className="card" style={{padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column', borderTop: '6px solid var(--msb-orange)'}}>
+      <div style={{padding: '24px', background: '#fff7ed', borderBottom: '1px solid #ffedd5', display: 'flex', alignItems: 'center', gap: '16px'}}>
+        <div style={{width: '56px', height: '56px', borderRadius: '12px', background: 'white', color: 'var(--msb-orange)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.05)'}}>
+          <i className="fas fa-cloud-bolt" style={{fontSize: '28px'}}></i>
+        </div>
+        <div>
+          <h3 style={{margin: 0, fontSize: '1.6rem', color: '#9a3412'}}>VNG Cloud</h3>
+          <div style={{color: '#f97316', fontSize: '16px', fontWeight: '600'}}>Các điểm yếu kỹ thuật chính</div>
+        </div>
+      </div>
+      <div style={{padding: '28px', flex: 1}}>
+        <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '20px'}}>
+          {[
+            { label: "Nhầm ký tự", text: 'Nhầm Y-V, M-N, dấu "=" thành "-".' },
+            { label: "Hậu xử lý", text: "Tự ý thêm thông tin sai lệch hoặc sai dấu." },
+            { label: "Dữ liệu số", text: "Nhầm số điện thoại (VD: 8989 -> 8998)." },
+            { label: "Độ ổn định", text: "Giảm mạnh với ảnh mờ hoặc chữ xấu." }
+          ].map((item, i) => (
+            <li key={i} style={{display: 'flex', gap: '16px', alignItems: 'start'}}>
+              <i className="fas fa-triangle-exclamation" style={{color: '#f97316', marginTop: '5px', fontSize: '18px'}}></i>
+              <div style={{fontSize: '17px', lineHeight: '1.5', color: '#374151'}}>
+                <strong style={{color: '#111827'}}>{item.label}:</strong> {item.text}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+);
+
+const ImprovementStrategyVisual = () => (
+  <div style={{height: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px'}}>
+    {[
+      {
+        num: "01",
+        title: "Cải thiện tiếng Việt",
+        icon: "fa-language",
+        color: "#0d6efd",
+        bg: "#eff6ff",
+        desc: "Giải quyết lỗi mất/lẫn dấu (â, ã, ơ, ô) để tăng CAR/WAR.",
+        items: ["Bổ sung dữ liệu huấn luyện/finetune đặc thù.", "Hậu xử lý chuẩn hóa dấu có kiểm soát."]
+      },
+      {
+        num: "02",
+        title: "Hiểu cấu trúc & Vùng",
+        icon: "fa-table",
+        color: "#198754",
+        bg: "#f0fdf4",
+        desc: "Tăng khả năng xử lý bảng biểu, chữ viết tay, con dấu.",
+        items: ["Trích xuất theo layout (key-value/table).", "Nhận diện vùng ảnh quan trọng (stamp)."]
+      },
+      {
+        num: "03",
+        title: "Ổn định vận hành",
+        icon: "fa-server",
+        color: "#6366f1",
+        bg: "#eef2ff",
+        desc: "Khắc phục lỗi OOO/CUDA, đảm bảo SLA hệ thống.",
+        items: ["Tối ưu pipeline inference & giới hạn VRAM.", "Giám sát tài nguyên + tự động degrade."]
+      }
+    ].map((item, i) => (
+      <div key={i} className="card" style={{padding: '28px', display: 'flex', flexDirection: 'column', gap: '20px', borderTop: `6px solid ${item.color}`, position: 'relative', overflow: 'hidden'}}>
+        <div style={{position: 'absolute', top: '-10px', right: '-10px', fontSize: '80px', fontWeight: '900', color: item.color, opacity: 0.05}}>{item.num}</div>
+        <div style={{width: '64px', height: '64px', borderRadius: '16px', background: item.bg, color: item.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>
+           <i className={`fas ${item.icon}`} style={{fontSize: '32px'}}></i>
+        </div>
+        <div>
+          <h3 style={{margin: '0 0 12px 0', fontSize: '1.6rem', color: '#1f2937'}}>{item.title}</h3>
+          <div style={{fontSize: '17px', color: '#4b5563', lineHeight: '1.5', marginBottom: '16px', minHeight: '50px'}}>
+            {item.desc}
+          </div>
+          <div style={{height: '1px', background: '#e5e7eb', marginBottom: '16px'}}></div>
+          <ul style={{margin: 0, paddingLeft: '20px', fontSize: '16px', color: '#374151', lineHeight: '1.6'}}>
+            {item.items.map((sub, j) => <li key={j} style={{marginBottom: '8px'}}>{sub}</li>)}
+          </ul>
+        </div>
       </div>
     ))}
   </div>
@@ -673,7 +843,7 @@ const UseCasesVisual = () => (
        <div style={{background: '#e0f2fe', padding: '8px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
          <i className="fas fa-circle-info" style={{color: '#0ea5e9', fontSize: '20px'}}></i>
        </div>
-       <div style={{color: '#0c4a6e', fontSize: '16px', lineHeight: '1.5'}}>
+       <div style={{color: '#0c4a6e', fontSize: '15px', lineHeight: '1.5'}}>
          Gợi ý use cases bám sát các hệ thống bị ảnh hưởng (<strong>BPM Ops/Risk, Digi-lending, IB Corp/Admin</strong>) và nhóm giấy tờ đã đánh giá trong báo cáo.
        </div>
     </div>
@@ -687,21 +857,21 @@ const UseCasesVisual = () => (
                 <i className="fas fa-id-card" style={{fontSize: '100px', color: 'var(--msb-red)'}}></i>
              </div>
              <span style={{background: 'var(--msb-red)', color: 'white', fontSize: '12px', fontWeight: 'bold', padding: '4px 10px', borderRadius: '20px', textTransform: 'uppercase', letterSpacing: '0.5px'}}>Front Office</span>
-             <h3 style={{margin: '16px 0 0 0', fontSize: '1.5rem', color: '#881337', fontWeight: '800'}}>eKYC & Onboarding</h3>
+             <h3 style={{margin: '16px 0 0 0', fontSize: '1.4rem', color: '#881337', fontWeight: '800'}}>eKYC & Onboarding</h3>
           </div>
           <div style={{padding: '24px', flex: 1, background: 'white'}}>
-             <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px'}}>
+             <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '15px'}}>
                 <li style={{display: 'flex', gap: '12px', alignItems: 'start'}}>
                    <i className="fas fa-check" style={{color: 'var(--msb-red)', marginTop: '4px', fontSize: '14px'}}></i>
-                   <span style={{color: '#374151', fontSize: '16px', lineHeight: '1.4'}}>Trích xuất trường định danh (CCCD)</span>
+                   <span style={{color: '#374151', lineHeight: '1.4'}}>Trích xuất trường định danh (CCCD)</span>
                 </li>
                 <li style={{display: 'flex', gap: '12px', alignItems: 'start'}}>
                    <i className="fas fa-check" style={{color: 'var(--msb-red)', marginTop: '4px', fontSize: '14px'}}></i>
-                   <span style={{color: '#374151', fontSize: '16px', lineHeight: '1.4'}}>Kiểm tra đủ hồ sơ tự động</span>
+                   <span style={{color: '#374151', lineHeight: '1.4'}}>Kiểm tra đủ hồ sơ tự động</span>
                 </li>
                 <li style={{display: 'flex', gap: '12px', alignItems: 'start'}}>
                    <i className="fas fa-check" style={{color: 'var(--msb-red)', marginTop: '4px', fontSize: '14px'}}></i>
-                   <span style={{color: '#374151', fontSize: '16px', lineHeight: '1.4'}}>Giảm nhập liệu tay (ảnh mờ/nghiêng)</span>
+                   <span style={{color: '#374151', lineHeight: '1.4'}}>Giảm nhập liệu tay (ảnh mờ/nghiêng)</span>
                 </li>
              </ul>
           </div>
@@ -714,21 +884,21 @@ const UseCasesVisual = () => (
                 <i className="fas fa-file-signature" style={{fontSize: '100px', color: 'var(--msb-orange)'}}></i>
              </div>
              <span style={{background: 'var(--msb-orange)', color: 'white', fontSize: '12px', fontWeight: 'bold', padding: '4px 10px', borderRadius: '20px', textTransform: 'uppercase', letterSpacing: '0.5px'}}>Core Automation</span>
-             <h3 style={{margin: '16px 0 0 0', fontSize: '1.5rem', color: '#9a3412', fontWeight: '800'}}>Tín dụng / LOS</h3>
+             <h3 style={{margin: '16px 0 0 0', fontSize: '1.4rem', color: '#9a3412', fontWeight: '800'}}>Tín dụng / LOS</h3>
           </div>
           <div style={{padding: '24px', flex: 1, background: 'white'}}>
-             <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px'}}>
+             <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '15px'}}>
                 <li style={{display: 'flex', gap: '12px', alignItems: 'start'}}>
                    <i className="fas fa-check" style={{color: 'var(--msb-orange)', marginTop: '4px', fontSize: '14px'}}></i>
-                   <span style={{color: '#374151', fontSize: '16px', lineHeight: '1.4'}}>Xử lý Khế ước, HĐLĐ, QĐ làm việc</span>
+                   <span style={{color: '#374151', lineHeight: '1.4'}}>Xử lý Khế ước, HĐLĐ, QĐ làm việc</span>
                 </li>
                 <li style={{display: 'flex', gap: '12px', alignItems: 'start'}}>
                    <i className="fas fa-check" style={{color: 'var(--msb-orange)', marginTop: '4px', fontSize: '14px'}}></i>
-                   <span style={{color: '#374151', fontSize: '16px', lineHeight: '1.4'}}>Chuẩn hóa dữ liệu phê duyệt</span>
+                   <span style={{color: '#374151', lineHeight: '1.4'}}>Chuẩn hóa dữ liệu phê duyệt</span>
                 </li>
                 <li style={{display: 'flex', gap: '12px', alignItems: 'start'}}>
                    <i className="fas fa-check" style={{color: 'var(--msb-orange)', marginTop: '4px', fontSize: '14px'}}></i>
-                   <span style={{color: '#374151', fontSize: '16px', lineHeight: '1.4'}}>Giảm can thiệp thủ công</span>
+                   <span style={{color: '#374151', lineHeight: '1.4'}}>Giảm can thiệp thủ công</span>
                 </li>
              </ul>
           </div>
@@ -741,21 +911,21 @@ const UseCasesVisual = () => (
                 <i className="fas fa-building-columns" style={{fontSize: '100px', color: '#0d6efd'}}></i>
              </div>
              <span style={{background: '#0d6efd', color: 'white', fontSize: '12px', fontWeight: 'bold', padding: '4px 10px', borderRadius: '20px', textTransform: 'uppercase', letterSpacing: '0.5px'}}>Back Office</span>
-             <h3 style={{margin: '16px 0 0 0', fontSize: '1.5rem', color: '#1e40af', fontWeight: '800'}}>Ops & Corp Banking</h3>
+             <h3 style={{margin: '16px 0 0 0', fontSize: '1.4rem', color: '#1e40af', fontWeight: '800'}}>Ops & Corp Banking</h3>
           </div>
           <div style={{padding: '24px', flex: 1, background: 'white'}}>
-             <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px'}}>
+             <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '15px'}}>
                 <li style={{display: 'flex', gap: '12px', alignItems: 'start'}}>
                    <i className="fas fa-check" style={{color: '#0d6efd', marginTop: '4px', fontSize: '14px'}}></i>
-                   <span style={{color: '#374151', fontSize: '16px', lineHeight: '1.4'}}>Lệnh chuyển tiền, BCTC, Hóa đơn</span>
+                   <span style={{color: '#374151', lineHeight: '1.4'}}>Lệnh chuyển tiền, BCTC, Hóa đơn</span>
                 </li>
                 <li style={{display: 'flex', gap: '12px', alignItems: 'start'}}>
                    <i className="fas fa-check" style={{color: '#0d6efd', marginTop: '4px', fontSize: '14px'}}></i>
-                   <span style={{color: '#374151', fontSize: '16px', lineHeight: '1.4'}}>Hỗ trợ đối chiếu & chốt số liệu</span>
+                   <span style={{color: '#374151', lineHeight: '1.4'}}>Hỗ trợ đối chiếu & chốt số liệu</span>
                 </li>
                 <li style={{display: 'flex', gap: '12px', alignItems: 'start'}}>
                    <i className="fas fa-check" style={{color: '#0d6efd', marginTop: '4px', fontSize: '14px'}}></i>
-                   <span style={{color: '#374151', fontSize: '16px', lineHeight: '1.4'}}>Tăng kiểm soát & truy vết (Audit)</span>
+                   <span style={{color: '#374151', lineHeight: '1.4'}}>Tăng kiểm soát & truy vết (Audit)</span>
                 </li>
              </ul>
           </div>
@@ -778,12 +948,13 @@ const SolutionComparisonTable = () => (
         <tbody>
           {[
             { label: 'Tổng quan', in: 'Báo cáo 24/12/2025 (1002 file)', vng: 'Báo cáo 11/12/2024 (1002 file)' },
+            { label: 'Đánh giá cấp độ (Maturity)', in: <span style={{fontWeight: 'bold', color: '#0ea5e9', background: '#e0f2fe', padding: '4px 8px', borderRadius: '4px'}}>Level 2 (Template/Structured)</span>, vng: <span style={{fontWeight: 'bold', color: '#0ea5e9', background: '#e0f2fe', padding: '4px 8px', borderRadius: '4px'}}>Level 2 (Template/Structured)</span> },
             { label: 'Độ chính xác (WAR)', in: <span style={{fontWeight: 'bold', color: '#dc2626'}}>88.87%</span>, vng: <span style={{fontWeight: 'bold', color: '#16a34a'}}>92.77%</span> },
             { label: 'Độ chính xác (CAR)', in: '81.24%', vng: <span style={{fontWeight: 'bold', color: '#16a34a'}}>93.64%</span> },
             { label: 'Tỷ lệ lỗi (WER)', in: '11.13%', vng: <span style={{fontWeight: 'bold', color: '#16a34a'}}>7.23%</span> },
             { label: 'Tỷ lệ từ chối', in: <span style={{fontWeight: 'bold', color: '#16a34a'}}>6.66%</span>, vng: '11.35%' },
-            { label: 'Ưu điểm chính', in: 'Chủ động vận hành, đáp ứng IT Cap, API ổn định (95.5%).', vng: 'Chất lượng nhận diện cao, xử lý tốt nhiều loại giấy tờ.' },
-            { label: 'Điểm yếu', in: 'Lỗi tiếng Việt (dấu), bảng biểu, chữ viết tay. Hay OOO/CUDA.', vng: 'Nhầm ký tự (Y-V, M-N), lỗi hậu xử lý, API không always-on.' }
+            { label: 'Ưu điểm chính', in: 'Chủ động công nghệ, tối ưu chi phí (Cost-effective).', vng: 'Chất lượng cao, Private Cloud (như On-Premise).' },
+            { label: 'Điểm yếu', in: 'Lỗi tiếng Việt (dấu), bảng biểu, chữ viết tay. Hay OOO/CUDA.', vng: 'Nhầm ký tự (Y-V, M-N), lỗi hậu xử lý, chi phí cao hơn.' }
           ].map((row, idx) => (
             <tr key={idx} style={{borderBottom: '1px solid #f1f5f9', background: idx % 2 === 0 ? 'white' : '#fafafa'}}>
               <td style={{padding: '14px 20px', fontWeight: '600', color: '#334155'}}>{row.label}</td>
@@ -793,6 +964,119 @@ const SolutionComparisonTable = () => (
           ))}
         </tbody>
       </table>
+    </div>
+  </div>
+);
+
+const RoutingPrinciples = () => (
+  <div className="card" style={{height: '100%', display: 'flex', flexDirection: 'column', padding: '24px', gap: '20px'}}>
+    <h3 style={{margin: 0, color: '#111827', fontSize: '1.6rem', display: 'flex', alignItems: 'center', gap: '10px'}}>
+      <i className="fas fa-filter" style={{color: '#0d6efd'}}></i>
+      Nguyên tắc Routing đề xuất
+    </h3>
+    
+    <div style={{flex: 1, display: 'flex', flexDirection: 'column', gap: '16px', justifyContent: 'center'}}>
+      {/* Core Principle */}
+      <div style={{padding: '16px', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0'}}>
+        <div style={{fontWeight: '700', color: '#334155', marginBottom: '8px', fontSize: '1.3rem'}}>
+          <i className="fas fa-ban" style={{color: '#ef4444', marginRight: '8px'}}></i>
+          Không chọn "một engine cho mọi thứ"
+        </div>
+        <div style={{color: '#475569', lineHeight: '1.5', fontSize: '17px'}}>
+          Routing linh hoạt dựa trên: <span style={{fontWeight: '700', color: '#0d6efd'}}>Loại giấy tờ</span>, <span style={{fontWeight: '700', color: '#0d6efd'}}>Độ phức tạp</span> (bảng/chữ tay) và <span style={{fontWeight: '700', color: '#0d6efd'}}>Tối ưu chi phí</span>.
+        </div>
+      </div>
+
+      {/* Specific Rules */}
+      <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px'}}>
+        <li style={{display: 'flex', gap: '12px', alignItems: 'start'}}>
+          <i className="fas fa-check-circle" style={{color: '#16a34a', marginTop: '4px'}}></i>
+          <span style={{color: '#374151', lineHeight: '1.5', fontSize: '17px'}}>
+            Nhóm cần <span style={{fontWeight: '700', color: '#16a34a'}}>tối ưu chi phí</span> & template đặc thù: Ưu tiên <strong>In-house / Finetune</strong>.
+          </span>
+        </li>
+        <li style={{display: 'flex', gap: '12px', alignItems: 'start'}}>
+          <i className="fas fa-check-circle" style={{color: '#16a34a', marginTop: '4px'}}></i>
+          <span style={{color: '#374151', lineHeight: '1.5', fontSize: '17px'}}>
+            Nhóm chứng từ, báo cáo, khế ước phức tạp: Tận dụng chất lượng <strong>VNG Cloud</strong>.
+          </span>
+        </li>
+        <li style={{display: 'flex', gap: '12px', alignItems: 'start'}}>
+          <i className="fas fa-shield-halved" style={{color: '#f59e0b', marginTop: '4px'}}></i>
+          <span style={{color: '#374151', lineHeight: '1.5', fontSize: '17px'}}>
+            Cơ chế <strong>Fallback</strong>: Tự động chuyển engine nếu gặp lỗi hoặc chất lượng suy giảm.
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+);
+
+const FinalProposal = () => (
+  <div style={{height: '100%', display: 'flex', flexDirection: 'column', gap: '30px'}}>
+    {/* Section 1: Core Capabilities */}
+    <div>
+      <div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px'}}>
+        <div style={{width: '40px', height: '40px', borderRadius: '10px', background: '#e0f2fe', color: '#0284c7', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <i className="fas fa-layer-group" style={{fontSize: '20px'}}></i>
+        </div>
+        <h3 style={{margin: 0, color: '#0f172a', fontSize: '1.6rem'}}>Năng lực lõi cần xây dựng trên AIEP</h3>
+      </div>
+      
+      <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px'}}>
+        {[
+          { icon: 'fa-route', title: 'Smart Routing', desc: 'Tự động chọn Engine theo loại giấy tờ, độ phức tạp & tối ưu chi phí.' },
+          { icon: 'fa-shuffle', title: 'Active Fallback', desc: 'Cơ chế chuyển luồng dự phòng khi Engine chính gặp lỗi/giảm chất lượng.' },
+          { icon: 'fa-chart-line', title: 'Live Monitoring', desc: 'Giám sát Realtime SLA, tỷ lệ lỗi & cảnh báo Drift chất lượng.' }
+        ].map((item, i) => (
+          <div key={i} className="card" style={{padding: '20px', display: 'flex', flexDirection: 'column', gap: '12px', borderLeft: '4px solid #0ea5e9'}}>
+            <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+               <i className={`fas ${item.icon}`} style={{fontSize: '24px', color: '#0ea5e9'}}></i>
+               <div style={{fontWeight: '700', color: '#1e293b', fontSize: '1.3rem'}}>{item.title}</div>
+            </div>
+            <div style={{fontSize: '17px', color: '#475569', lineHeight: '1.5'}}>{item.desc}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Section 2: Next Actions */}
+    <div style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+      <div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px'}}>
+        <div style={{width: '40px', height: '40px', borderRadius: '10px', background: '#dcfce7', color: '#16a34a', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <i className="fas fa-list-check" style={{fontSize: '20px'}}></i>
+        </div>
+        <h3 style={{margin: 0, color: '#0f172a', fontSize: '1.6rem'}}>Kế hoạch hành động tiếp theo</h3>
+      </div>
+
+      <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px', flex: 1}}>
+        {[
+          { 
+            cat: 'Governance', icon: 'fa-gavel', color: '#7c3aed', bg: '#f3e8ff',
+            items: ['Chuẩn hóa taxonomy loại giấy tờ.', 'Thiết lập ngưỡng chất lượng (Quality Gate) cho từng nhóm hồ sơ.'] 
+          },
+          { 
+            cat: 'Technology', icon: 'fa-code', color: '#2563eb', bg: '#dbeafe',
+            items: ['Tích hợp Fallback & chuẩn hóa Output (Text/Structured).', 'Tối ưu pipeline, giám sát tài nguyên OOO/CUDA.'] 
+          },
+          { 
+            cat: 'Data & AI', icon: 'fa-database', color: '#db2777', bg: '#fce7f3',
+            items: ['Thu thập mẫu khó (dấu đỏ, chữ tay, bảng biểu).', 'Finetune In-house cho nhóm PII & Template đặc thù.'] 
+          }
+        ].map((group, i) => (
+          <div key={i} className="card" style={{padding: '20px', borderTop: `4px solid ${group.color}`, display: 'flex', flexDirection: 'column', gap: '16px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)'}}>
+            <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
+              <div style={{width: '32px', height: '32px', borderRadius: '8px', background: group.bg, color: group.color, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                 <i className={`fas ${group.icon}`} style={{fontSize: '14px'}}></i>
+              </div>
+              <span style={{fontWeight: '700', color: '#374151', textTransform: 'uppercase', fontSize: '1.1rem', letterSpacing: '0.5px'}}>{group.cat}</span>
+            </div>
+            <ul style={{margin: 0, paddingLeft: '20px', fontSize: '17px', color: '#4b5563', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '10px'}}>
+              {group.items.map((text, j) => <li key={j}>{text}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 );
@@ -871,56 +1155,10 @@ export const SLIDES_DATA = [
 },
 {
   "id": 9,
-  "type": "layout_grid_2x2_cards",
+  "type": "layout_full",
   "title": "2. Đánh giá hiện trạng ứng dụng OCR tại MSB",
   "subTitle": "2.2 Chất lượng dữ liệu đầu vào",
-  "desc": "Hệ thống văn bản điện tử đã vận hành ổn định. Tuy nhiên, đầu vào cho OCR vẫn gặp rào cản tại các điểm chạm vật lý (chi nhánh, khách hàng upload):",
-  "cards": [
-    {
-      "name": "Nguồn dữ liệu hỗn hợp",
-      "slogan": "HYBRID INPUT",
-      "desc": "",
-      "features": [
-        "Kết hợp giữa văn bản số hóa sẵn và bản scan/chụp",
-        "Đến từ nhiều kênh: Mobile App, Quầy, Đối tác"
-      ],
-      "color": "var(--msb-red)",
-      "icon": "fas fa-share-nodes"
-    },
-    {
-      "name": "Định dạng chưa chuẩn hóa",
-      "slogan": "VARIOUS FORMATS",
-      "desc": "",
-      "features": [
-        "Tồn tại song song PDF, Word và ảnh (JPG/PNG)",
-        "Độ phân giải và chuẩn nén khác nhau giữa các nguồn"
-      ],
-      "color": "var(--msb-orange)",
-      "icon": "fas fa-file-lines"
-    },
-    {
-      "name": "Thách thức từ ảnh chụp",
-      "slogan": "IMAGE QUALITY",
-      "desc": "",
-      "features": [
-        "Một số ảnh bị mờ, nghiêng, thiếu sáng (Mobile)",
-        "Bản photocopy mờ hoặc scan độ phân giải thấp"
-      ],
-      "color": "#0d6efd",
-      "icon": "fas fa-camera-retro"
-    },
-    {
-      "name": "Nhiễu & Đặc thù pháp lý",
-      "slogan": "NOISE & STAMPS",
-      "desc": "",
-      "features": [
-        "Dấu đỏ đóng chồng lên chữ (đặc thù ngân hàng)",
-        "Nhiễu nền, vết mực, bóng tay trên giấy tờ cũ"
-      ],
-      "color": "#198754",
-      "icon": "fas fa-stamp"
-    }
-  ]
+  "content": <DataQualityVisual />
 },
 {
   "id": 10,
@@ -939,46 +1177,14 @@ export const SLIDES_DATA = [
   "id": 12,
   "type": "layout_full",
   "title": "3. Báo cáo đánh giá chi tiết năng lực OCR",
-  "subTitle": "3.1 Tổng quan hai giải pháp đang đánh giá",
+  "subTitle": "3.1 Tổng quan số liệu & Cấp độ trưởng thành",
   "content": <SolutionComparisonTable />
 },
 {
   "id": 13,
-  "type": "layout_dual_cards",
-  "title": "3. Báo cáo đánh giá chi tiết năng lực OCR",
-  "subTitle": "3.2 In-House (AIEP) • Chỉ số vận hành & chất lượng",
-  "left": {
-    "title": "Word Correct vs Word Error (WAR/WER)",
-    "chart": <DoughnutChart data={INHOUSE_WORD_DONUT_DATA} />,
-    "desc": "WAR = 88.87% • WER = 11.13% (WAR+WER ≈ 100%)."
-  },
-  "right": {
-    "title": "Tổng hợp chỉ số chất lượng chính",
-    "chart": <BarChart data={INHOUSE_QUALITY_BAR_DATA} customOptions={{ scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } } } }} />,
-    "desc": "Call API thành công 95.5% (955 call) • Call lỗi 4.4% • Rejection 6.66%."
-  }
-},
-{
-  "id": 14,
-  "type": "layout_dual_cards",
-  "title": "3. Báo cáo đánh giá chi tiết năng lực OCR",
-  "subTitle": "3.3 VNG Cloud • Chỉ số chất lượng",
-  "left": {
-    "title": "Word Correct vs Word Error (WAR/WER)",
-    "chart": <DoughnutChart data={VNG_WORD_DONUT_DATA} />,
-    "desc": "WAR = 92.77% • WER = 7.23% (WAR+WER ≈ 100%)."
-  },
-  "right": {
-    "title": "Tổng hợp chỉ số chất lượng chính",
-    "chart": <BarChart data={VNG_QUALITY_BAR_DATA} customOptions={{ scales: { y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } } } }} />,
-    "desc": "CAR 93.64% • CER 6.36% • Rejection 11.35% (theo báo cáo)."
-  }
-},
-{
-  "id": 15,
   "type": "layout_split_content",
   "title": "3. Báo cáo đánh giá chi tiết năng lực OCR",
-  "subTitle": "3.4 So sánh tổng quan (chuẩn hóa về thang 0–10)",
+  "subTitle": "3.2 So sánh tổng quan (Visual)",
   "layout": "split-chart-50-50",
   "analysis": {
     "points": [
@@ -989,12 +1195,12 @@ export const SLIDES_DATA = [
       },
       {
         "label": "Điểm nhấn:",
-        "text": "VNG Cloud vượt trội ở CAR và các lỗi WER/CER (thấp hơn), nhưng có rủi ro vận hành (API không always-on).",
+        "text": "VNG Cloud (Private Cloud) vượt trội ở CAR và các lỗi WER/CER, phù hợp các nhóm giấy tờ quan trọng.",
         "color": "var(--msb-red)"
       },
       {
         "label": "In-house:",
-        "text": "Có tỷ lệ call API thành công 95.5% và Rejection 6.66%, nhưng cần cải thiện CAR và xử lý tiếng Việt có dấu/bảng/chữ tay.",
+        "text": "Lợi thế lớn về chi phí và chủ động công nghệ, nhưng cần cải thiện CAR và xử lý tiếng Việt có dấu/bảng/chữ tay.",
         "color": "#0d6efd"
       }
     ],
@@ -1020,10 +1226,10 @@ export const SLIDES_DATA = [
   "chart": <RadarChart data={RADAR_COMPARE_DATA} />
 },
 {
-  "id": 16,
+  "id": 14,
   "type": "layout_dual_cards",
   "title": "3. Báo cáo đánh giá chi tiết năng lực OCR",
-  "subTitle": "3.5 WER theo loại giấy tờ (từ bảng đối soát)",
+  "subTitle": "3.3 Phân tích sâu: Tại sao In-House có WER cao?",
   "left": {
     "title": "In-House • WER theo loại giấy tờ",
     "chart": <HorizontalBarChart data={IN_DOC_WER_DATA} customOptions={{ scales: { x: { max: 450, ticks: { callback: v => v + '%' } }, y: { grid: { display: false } } } }} />,
@@ -1036,73 +1242,27 @@ export const SLIDES_DATA = [
   }
 },
 {
+  "id": 15,
+  "type": "layout_full",
+  "title": "3. Báo cáo đánh giá chi tiết năng lực OCR",
+  "subTitle": "3.4 Phân tích lỗi & kết luận kỹ thuật",
+  "content": <ErrorAnalysisVisual />
+},
+{
+  "id": 16,
+  "type": "layout_full",
+  "title": "3. Báo cáo đánh giá chi tiết năng lực OCR",
+  "subTitle": "3.5 Đề xuất cải tiến (bám sát kết luận kỹ thuật)",
+  "content": <ImprovementStrategyVisual />
+},
+{
   "id": 17,
-  "type": "layout_grid_2_cards",
-  "title": "3. Báo cáo đánh giá chi tiết năng lực OCR",
-  "subTitle": "3.6 Phân tích lỗi & kết luận kỹ thuật",
-  "cards": [
-    {
-      "icon": "fas fa-microchip",
-      "iconColor": "var(--msb-red)",
-      "h": "In-House (AIEP) • Nhược điểm",
-      "p": "Các điểm yếu được ghi nhận trong báo cáo:",
-      "list": []
-    },
-    {
-      "icon": "fas fa-cloud-bolt",
-      "iconColor": "var(--msb-orange)",
-      "h": "VNG Cloud • Nhược điểm",
-      "p": "Các điểm yếu được ghi nhận trong báo cáo:",
-      "list": []
-    }
-  ]
-},
-{
-  "id": 18,
-  "type": "layout_grid_3_icon_cards",
-  "title": "3. Báo cáo đánh giá chi tiết năng lực OCR",
-  "subTitle": "3.7 Đề xuất cải tiến (bám sát kết luận kỹ thuật)",
-  "strategy": [
-    {
-      "num": "01",
-      "title": "Cải thiện tiếng Việt có dấu",
-      "icon": "fa-language",
-      "desc": "Giải quyết lỗi mất/lẫn dấu (â, ã, ơ, ô) để tăng CAR/WAR ở dữ liệu thực tế.",
-      "details": [
-        "Bổ sung dữ liệu huấn luyện/finetune theo đặc thù MSB.",
-        "Hậu xử lý chuẩn hóa dấu có kiểm soát (tránh tự ý thêm/sửa sai)."
-      ]
-    },
-    {
-      "num": "02",
-      "title": "Hiểu cấu trúc & vùng quan trọng",
-      "icon": "fa-table",
-      "desc": "Tăng khả năng xử lý bảng biểu phức tạp, chữ viết tay; nhận diện chữ ký & con dấu.",
-      "details": [
-        "Trích xuất theo layout (key-value/table/regions).",
-        "Nhận diện vùng ảnh quan trọng (signature/stamp)."
-      ]
-    },
-    {
-      "num": "03",
-      "title": "Ổn định vận hành GPU",
-      "icon": "fa-server",
-      "desc": "Khắc phục lỗi OOO/CUDA để đảm bảo SLA và khả năng phục vụ khối lượng.",
-      "details": [
-        "Giới hạn batch/VRAM, tối ưu pipeline inference.",
-        "Giám sát tài nguyên + tự động degrade/fallback khi quá tải."
-      ]
-    }
-  ]
-},
-{
-  "id": 19,
   "type": "layout_section_header",
   "title": "4. Triển khai OCR Engine trên AIEP",
   "subtitle": "Vấn đề & giải pháp • Năng lực lõi đề xuất"
 },
 {
-  "id": 20,
+  "id": 18,
   "type": "layout_2_col",
   "title": "4. Đề xuất phương án triển khai OCR Engine trên AIEP",
   "subTitle": "4.1 Khuyến nghị sử dụng năng lực OCR (routing theo hồ sơ)",
@@ -1111,120 +1271,17 @@ export const SLIDES_DATA = [
     0.8
   ],
   "left": <EngineAllocTable />,
-  "right": {
-    "type": "text_block",
-    "title": "Nguyên tắc routing đề xuất",
-    "paragraphs": [
-      "Không chọn “một engine cho mọi thứ”. Routing dựa trên: (1) loại giấy tờ, (2) độ phức tạp (bảng/chữ tay/dấu đỏ), (3) yêu cầu PII & IT Cap, (4) yêu cầu tốc độ/độ chính xác.",
-      "Kèm cơ chế fallback: nếu engine ưu tiên lỗi/giảm chất lượng → chuyển engine khác để giảm rủi ro phụ thuộc."
-    ],
-    "list": [
-      "Nhóm PII nhạy cảm & template đặc thù: ưu tiên In-house/Finetune In-house.",
-      "Nhóm chứng từ/báo cáo/khế ước: tận dụng chất lượng VNG Cloud (theo bảng đối soát).",
-      "Luôn có monitoring theo loại tài liệu để phát hiện drift."
-    ]
-  }
+  "right": <RoutingPrinciples />
 },
 {
-  "id": 21,
-  "type": "layout_grid_3_icon_cards",
+  "id": 19,
+  "type": "layout_full",
   "title": "4. Đề xuất phương án triển khai OCR Engine trên AIEP",
-  "subTitle": "4.2 Năng lực chính đề xuất trên AIEP",
-  "strategy": [
-    {
-      "num": "01",
-      "title": "OCR Routing & Model Selection",
-      "icon": "fa-route",
-      "desc": "Tự động lựa chọn Engine phù hợp theo tài liệu/yêu cầu.",
-      "details": [
-        "Chọn engine theo loại giấy tờ + độ phức tạp + mục tiêu chất lượng/tốc độ.",
-        "Hỗ trợ policy theo PII/IT Cap (ưu tiên in-house khi cần)."
-      ]
-    },
-    {
-      "num": "02",
-      "title": "Cơ chế Fallback",
-      "icon": "fa-shuffle",
-      "desc": "Chuyển sang engine khác khi engine ưu tiên gặp lỗi.",
-      "details": [
-        "Giảm rủi ro vendor lock-in / outage.",
-        "Kết hợp với rule cảnh báo theo error-rate/latency."
-      ]
-    },
-    {
-      "num": "03",
-      "title": "Monitoring & Observability",
-      "icon": "fa-chart-line",
-      "desc": "Dashboard realtime theo dõi request, lỗi, thời gian xử lý, cảnh báo sớm.",
-      "details": [
-        "Theo dõi số lượng request, tỷ lệ thành công/lỗi, thời gian xử lý.",
-        "Cảnh báo sớm khi giảm chất lượng theo từng loại giấy tờ."
-      ]
-    }
-  ]
+  "subTitle": "4.2 Năng lực lõi & Kế hoạch hành động",
+  "content": <FinalProposal />
 },
 {
-  "id": 22,
-  "type": "layout_summary_actions",
-  "title": "4. Đề xuất phương án triển khai OCR Engine trên AIEP",
-  "subTitle": "Tóm tắt khuyến nghị & bước tiếp theo",
-  "summary": {
-    "cards": [
-      {
-        "icon": "fas fa-sitemap",
-        "color": "var(--msb-red)",
-        "h": "Chiến lược 2-engine + Finetune",
-        "list": [
-          "In-house (AIEP): điều lệ DN, quy chế nội bộ, thỏa thuận bảo lãnh, HĐLĐ/QĐ làm việc.",
-          "VNG Cloud: chứng từ nhập/bán hàng, hóa đơn, BCTC, VB hành chính, khế ước nhận nợ.",
-          "Finetune in-house: CCCD, giấy tờ nhà đất, BB đánh giá tài sản (PII + template đặc thù)."
-        ]
-      },
-      {
-        "icon": "fas fa-eye",
-        "color": "var(--msb-orange)",
-        "h": "Bắt buộc nâng năng lực AIEP",
-        "list": [
-          "Routing & model selection theo policy nghiệp vụ.",
-          "Fallback khi lỗi/giảm chất lượng.",
-          "Monitoring/observability theo loại tài liệu + cảnh báo drift."
-        ]
-      }
-    ]
-  },
-  "next_actions": {
-    "icon": "fa-list-check",
-    "title": "Next actions (không bịa số liệu, tập trung triển khai)",
-    "groups": [
-      {
-        "icon": "fa-shield-halved",
-        "category": "Governance",
-        "items": [
-          "Chuẩn hóa taxonomy loại giấy tờ + rule routing theo nghiệp vụ.",
-          "Quy định ngưỡng chất lượng tối thiểu theo nhóm hồ sơ."
-        ]
-      },
-      {
-        "icon": "fa-gears",
-        "category": "Tech",
-        "items": [
-          "Tích hợp fallback + chuẩn hóa output (text/structured).",
-          "Theo dõi lỗi OOO/CUDA & tối ưu pipeline inference."
-        ]
-      },
-      {
-        "icon": "fa-database",
-        "category": "Data",
-        "items": [
-          "Thu thập dữ liệu khó: dấu đỏ, bảng, chữ tay, scan kém.",
-          "Finetune in-house theo PII/template đặc thù."
-        ]
-      }
-    ]
-  }
-},
-{
-  "id": 23,
+  "id": 20,
   "type": "end",
   "title": "Cảm ơn",
   "titleGradient": "Q&A",
